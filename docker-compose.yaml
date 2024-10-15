@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .  # Cela indique à Docker Compose de construire l'image à partir du Dockerfile dans le répertoire courant
+    container_name: python_linuxSetupHelper
+    volumes:
+      - ./:/usr/src/app  # Monte le dossier du projet dans le conteneur
+      - ./dist:/usr/src/app/dist # Partager le dossier dist du conteneur avec le dist de l'app pour la compilation
+      - /tmp/.X11-unix:/tmp/.X11-unix  # Partage le socket X11 pour l'affichage
+    environment:
+      - DISPLAY=${DISPLAY}  # Passe la variable DISPLAY de l'hôte au conteneur
+      - QT_X11_NO_MITSHM=1  # Empêche les erreurs liées à l'accès MIT-SHM sur X11
+    working_dir: /usr/src/app
+    command: python main.py
+
+# If getting error getting display:0 while lauching container, do this command
+# xhost +local:root
