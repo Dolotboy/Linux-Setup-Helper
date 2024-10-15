@@ -48,7 +48,7 @@ applications_by_section = {
             "xdg-open https://d13lb3tujbc8s0.cloudfront.net/onlineinstallers/qt-online-installer-linux-x64-4.8.1.run",
             "sudo apt-get install -y libxcb-cursor-dev"
         ]),
-        Application("Docker", "Outil de gestion de conteneur", "docker.png", True, [
+        Application("Docker", "Container manager tool", "docker.png", True, [
             "sudo apt-get update",
             "sudo apt-get install ca-certificates curl",
             "sudo install -m 0755 -d /etc/apt/keyrings",
@@ -60,7 +60,7 @@ applications_by_section = {
             "sudo docker run hello-world",
             "sudo apt install docker-compose"
         ]),
-        Application("Git", "Outil de gestion de version", "git.png", True, ["sudo apt install git-all"]),
+        Application("Git", "Version manager tools", "git.png", True, ["sudo apt install git-all"]),
         Application("Unity Hub", "Unity Game Engine", "unity.png", True, [
             "wget -qO - https://hub.unity3d.com/linux/keys/public | gpg --dearmor | sudo tee /usr/share/keyrings/Unity_Technologies_ApS.gpg > /dev/null",
             "sudo sh -c 'echo \"deb [signed-by=/usr/share/keyrings/Unity_Technologies_ApS.gpg] https://hub.unity3d.com/linux/repos/deb stable main\" > /etc/apt/sources.list.d/unityhub.list\'",
@@ -71,7 +71,7 @@ applications_by_section = {
     "Utilities": [
         Application("Snap", "Linux package manager", "snap.png", True, ["sudo rm /etc/apt/preferences.d/nosnap.pref", "sudo snap install vlc"]),
         Application("VLC Media Player", "Video media player (Require Snap)", "vlc.png", True, ["sudo rm /etc/apt/preferences.d/nosnap.pref", "sudo apt install snapd"]),
-        Application("Wine", "Émulateur pour applications Windows.", "wine.png", True, ["sudo apt install wine64 wine32"]),
+        Application("Wine", "Emulator for Windows apps", "wine.png", True, ["sudo apt install wine64 wine32"]),
         Application("Thème Windows", "Installer un thème windows", "windows.png", True, [
             "wget https://github.com/B00merang-Project/Windows-10-Dark/archive/refs/tags/3.2.1-dark.zip",
             "mkdir -p ~/\".themes\"",
