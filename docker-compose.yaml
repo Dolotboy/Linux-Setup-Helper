@@ -14,6 +14,3 @@ services:
       - QT_X11_NO_MITSHM=1  # Empêche les erreurs liées à l'accès MIT-SHM sur X11
     working_dir: /usr/src/app
     command: python main.py
-
-# If getting error getting display:0 while lauching container, do this command
-# xhost +local:root

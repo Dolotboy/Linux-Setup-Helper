@@ -5,9 +5,6 @@ from tkinter import messagebox
 import subprocess
 import config
 
-# docker exec -it python_linuxSetupHelper pyinstaller --onefile main.py
-# pyinstaller --onefile main.py
-
 class Application:
     def __init__(self, name, description, image, open_console, commands):
         self.name = name
