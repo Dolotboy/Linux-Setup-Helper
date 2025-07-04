@@ -7,6 +7,17 @@ window_height = 700
 # Tableau d'objets Application, organisé par sections
 applications_by_section = {
     "System": [
+        Application("Linux mint version", "Get linux mint version", "mint.png", True, ["cat /etc/issue"]),
+        Application("Update & Upgrade", "Update and Upgrade packages", "download.png", True, ["sudo apt update && apt upgrade"]),
+        Application("Linux mint upgrade 21.3 to 22", "An update from Linux mint 21.3 to 22", "mint.png", True, [
+            "sudo apt update",
+            "sudo apt install mintupgrade",
+            "sudo mintupgrade",
+            "sudo apt remove mintupgrade",
+            "sudo reboot"
+        ])
+    ],
+    "Input": [
         Application("Update & Upgrade", "Supprimer", "download.png", True, ["sudo apt update && apt upgrade"]),
         Application("Raccourci Navigateur", "Ctrl+Alt+A", "Firefox.png", False, [
             "gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings \"['/org/gnome/settings-daemon/plugins/media-keys/custom-keybinding/custom-open-browser/\']\"; "
@@ -17,7 +28,7 @@ applications_by_section = {
         Application("Supprimer Raccourci Navigateur", "Supprimer", "Firefox.png", True, ["gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings '[]'"])
     ],
     "Gaming": [
-        Application("Discord", "Application de chat vocal et textuel. (Require Snap)", "discord.png", True, ["sudo snap install discord"]),
+        Application("Discord", "Application de chat vocal et textuel. (Require Snap)", "discord.png", True, ["sudo snap install discord"]), #https://discord.com/api/download?platform=linux&format=deb
         Application("Steam", "Plateforme de distribution de jeux.", "steam.png", True, ["sudo apt install steam", "sudo add-apt-repository multiverse", "sudo apt update", "sudo apt install steam"]),
         Application("Lutris", "Gestionnaire de jeux vidéo open-source.", "lutris.png", True, ["sudo apt install lutris"]),
         Application("OpenRazer", "Razer device manager", "razer.png", True, [
@@ -85,6 +96,7 @@ applications_by_section = {
             "cd ~/.icons/",
             "unzip master.zip",
             "rm master.zip"
-        ])
+        ]),
+        Application("Solaar", "Logitech device manager", "logitech.png", True, ["sudo apt install solaar"])
     ]
 }

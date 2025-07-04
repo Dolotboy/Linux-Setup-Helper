@@ -10,6 +10,28 @@ A tool that helps new Linux user to setup and install what they need
 - [python tk / pip install tk](https://docs.python.org/3/library/tkinter.html)
 - [python pyinstaller / pip install pysintaller](https://pyinstaller.org/en/stable/)
 
+## Run the container
+- sudo docker-compose up
+If you have an error like this one:
+```bash
+Starting python_linuxSetupHelper ... done
+Attaching to python_linuxSetupHelper
+python_linuxSetupHelper | Authorization required, but no authorization protocol specified
+python_linuxSetupHelper | Authorization required, but no authorization protocol specified
+python_linuxSetupHelper | Traceback (most recent call last):
+python_linuxSetupHelper |   File "/usr/src/app/main.py", line 147, in <module>
+python_linuxSetupHelper |     create_gui()
+python_linuxSetupHelper |   File "/usr/src/app/main.py", line 45, in create_gui
+python_linuxSetupHelper |     root = tk.Tk()
+python_linuxSetupHelper |            ^^^^^^^
+python_linuxSetupHelper |   File "/usr/local/lib/python3.12/tkinter/__init__.py", line 2346, in __init__
+python_linuxSetupHelper |     self.tk = _tkinter.create(screenName, baseName, className, interactive, wantobjects, useTk, sync, use)
+python_linuxSetupHelper |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+python_linuxSetupHelper | _tkinter.TclError: couldn't connect to display ":0"
+python_linuxSetupHelper exited with code 1
+```
+Then execute this command before the step 1 : xhost +si:localuser:root
+
 ## Compile
 
 If you are running the tool under Docker (With the included files in the repository), you will need to execute the pyinstaller command inside the Docker container:
