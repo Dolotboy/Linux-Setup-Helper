@@ -1,4 +1,4 @@
-from main import Application
+from models.application import Application
 
 num_columns = 4
 window_width = 875
